@@ -1,0 +1,87 @@
+   <img
+         src={`${BASE_URL}${movie.backdrop_path || movie.poster_path}` || 
+         `${BASE_URL}${movie.poster_path}`
+        } 
+        alt="movie poster"
+      />
+      <TextTruncate
+        line={1}
+        element="p"
+        truncateText="..."
+        text={movie.overview}
+      />
+      <p>{movie.overview}</p>
+      <p>{movie.release_date || movie.first_air_date}</p>
+      <h2>{movie.title || movie.original_name}</h2>
+      <p>{movie.vote_count}</p>
+
+
+
+      import React, { useEffect, useState } from "react";
+import axios from "../axios";
+import requests from "../requests";
+import "./Results.css";
+import VideoCard from "./VideoCard";
+
+const Results = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(requests.fetchTrending);
+      console.log(request.data);
+      setMovies(request.data.results);
+      return request;
+    }
+
+    fetchData();
+  }, []);
+
+  return (
+    <div className="results">
+        gyuuuuuuugygu<h1>ttttttttttt</h1>
+      {movies.map((movie) => {
+        <VideoCard movie={movie} />;
+      })}
+    </div>
+  );
+};
+
+export default Results;
+
+
+
+
+
+import React from "react";
+import "./VideoCard.css";
+import TextTruncate from "react-text-truncate"
+import {ThumbsUp} from "@material-ui/icons"
+
+
+
+const VideoCard = ({ movie }) => {
+    const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  return (
+    <div className="videoCard">
+      <img
+         src={`${BASE_URL}${movie.backdrop_path || movie.poster_path}` || 
+         `${BASE_URL}${movie.poster_path}`
+        } 
+        alt="movie poster"
+      />
+      <TextTruncate
+        line={1}
+        element="p"
+        truncateText="..."
+        text={movie.overview}
+      />
+      <p>{movie.overview}</p>
+      <p>{movie.release_date || movie.first_air_date}</p>
+      <h2>{movie.title || movie.original_name}</h2>
+      <p>{movie.vote_count}</p>
+    </div>
+  );
+};
+
+export default VideoCard;
