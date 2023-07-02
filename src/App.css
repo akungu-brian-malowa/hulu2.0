@@ -1,5 +1,5 @@
 .app {
   width: 100vw;
-  height: auto;
+  min-height: 200vh;
   background-image: linear-gradient(to right, #051421, #042727);
 }

@@ -25,8 +25,25 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+@media only screen and (max-width: 400px) {
+  .header__icon > .MuiSvgIcon-root {
+    font-size: 18px;
+   
+    
+  }
+}
+
+
 .header__icon--active > p {
     display: inline-flex !important;
+  }
+  @media only screen and (max-width: 400px) {
+    .header__icon--active > p .MuiSvgIcon-root {
+      font-size: small;
+     
+      
+    }
   }
 
 

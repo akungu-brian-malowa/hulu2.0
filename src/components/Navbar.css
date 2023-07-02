@@ -1,31 +1,43 @@
-.nav{
-    display: flex;
-    color: white;
-    overflow-x: scroll;
-    padding: 10px;
-    padding-left: 40px;
+.nav {
+  display: flex;
+  color: white;
+  overflow-x: scroll;
+  padding: 10px;
+  padding-left: 40px;
 }
 
- /* hide scrollbar on chrome, safari and Opera*/
- .nav::-webkit-scrollbar {
-    display: none;
+/* hide scrollbar on chrome, safari and Opera*/
+.nav::-webkit-scrollbar {
+  display: none;
 }
 
-.nav{
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+.nav {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.nav > h2{
+.nav > h2 {
+  cursor: pointer;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: transform 50ms ease-out;
+}
+
+@media only screen and (max-width: 400px) {
+  .nav > h2 {
+    font-size: small;
     cursor: pointer;
-    margin-left: 25px;
-    margin-right: 25px;
-    font-weight: 500;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: 400;
     opacity: 0.7;
     transition: transform 50ms ease-out;
-
+  }
 }
-.nav > h2:hover{
-    opacity: 1;
-    transform:scale(1.2);
+
+.nav > h2:hover {
+  opacity: 1;
+  transform: scale(1.2);
 }
