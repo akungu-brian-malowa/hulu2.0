@@ -10,7 +10,11 @@
       height: 350px;
       object-fit: contain;
       width: 360px;
+      transition: none;
     }
+    .videoCard:hover {
+        transform: none;
+      }
   }
 .videoCard:hover {
   transform: scale(1.09);
