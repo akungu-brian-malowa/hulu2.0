@@ -9,7 +9,7 @@
     .videoCard {
       height: 350px;
       object-fit: contain;
-      width: 360px;
+      width: 330px;
       transition: none;
     }
     .videoCard:hover {
@@ -29,7 +29,7 @@
   .videoCard > img {
     height: 250px;
     object-fit: contain;
-    width: 360px;
+    width: 330px;
   }
 }
 .videoCard__stats {
