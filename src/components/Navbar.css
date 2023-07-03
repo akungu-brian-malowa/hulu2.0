@@ -6,6 +6,17 @@
   padding-left: 40px;
 }
 
+@media only screen and (max-width: 400px) {
+  .nav {
+    display: flex;
+    color: white;
+    overflow-x: scroll;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 1px;
+  }
+}
+
 /* hide scrollbar on chrome, safari and Opera*/
 .nav::-webkit-scrollbar {
   display: none;
@@ -17,6 +28,7 @@
 }
 
 .nav > h2 {
+  flex-direction: row;
   cursor: pointer;
   margin-left: 25px;
   margin-right: 25px;
@@ -27,6 +39,7 @@
 
 @media only screen and (max-width: 400px) {
   .nav > h2 {
+    flex-direction: row;
     font-size: small;
     cursor: pointer;
     margin-left: 15px;
